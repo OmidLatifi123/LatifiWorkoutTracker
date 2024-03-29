@@ -4,9 +4,17 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const hbs = require('hbs');
+
+// additional dependencies
+const mongoose = require('mongoose');
+const passport = require('passport');
+const session = require('express-session');
 
 // Routing modules
-const indexRouter = require('../Routes');
+const indexRouter = require('../Routes/index');
+const excerciseRouter = require('../Routes/post');
+const authRouter = require('../Routes/auth');
 
 const app = express();
 

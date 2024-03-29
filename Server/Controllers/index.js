@@ -19,8 +19,44 @@ function DisplayHome(req, res, next)
   res.render('index', {title: 'Home', page: 'home'});
 }
 
+function DisplayPush(req, res, next)
+{
+  res.render('push', {title: 'Push Excercises', page: 'push'});
+}
+
+function DisplayPull(req, res, next)
+{
+  res.render('pull', {title: 'Pull Excercises', page: 'pull'});
+}
+
+function DisplayLegs(req, res, next)
+{
+  res.render('legs', {title: 'Leg Excercises', page: 'legs'});
+}
+
+function DisplayCreatePush(req, res, next)
+{
+  res.render('createPush', {title: 'Create Push Excercise', page: 'createPush'});
+}
+
+function DisplayCreatePull(req, res, next)
+{
+  res.render('createPull', {title: 'Create Pull Excercise', page: 'createPull'});
+}
+
+function DisplayCreateLegs(req, res, next)
+{
+  res.render('createLegs', {title: 'Create Leg Excercise', page: 'createLegs'});
+}
+
 module.exports = {
- DisplayHome: DisplayHome 
+ DisplayHome: DisplayHome,
+ DisplayPush: DisplayPush,
+ DisplayPull: DisplayPull,
+ DisplayLegs: DisplayLegs,
+ DisplayCreatePush: DisplayCreatePush,
+ DisplayCreatePull: DisplayCreatePull,
+ DisplayCreateLegs: DisplayCreateLegs 
 }
 
   
