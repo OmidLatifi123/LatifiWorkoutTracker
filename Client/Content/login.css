@@ -1,0 +1,222 @@
+.card-body {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Login-Container {
+    background: #161c25;
+    padding: 20px;
+    color: black;
+    width: 50%;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      transition: ease-in .2s;
+      mix-blend-mode: normal;
+  }
+  
+  .Login-Container img{
+    align-items: center;
+    height: 75px;
+    width: auto;
+    padding-top: 20px;
+    transition: ease-in .2s;
+  }
+  
+  .Login-From-Section{
+    padding: 5vh;
+    background-color: #ba282b;
+    background-image: url('/Assets/images/Omid-Login.png');
+    background-size: 100% auto;
+    background-position: right top;
+    background-repeat: no-repeat;
+    filter: invert(0%);
+    transition: ease-in .2s;
+   }
+  
+  .Login-h1{
+    text-align: center;
+    color: #ba282b;
+    font-weight: bold;
+    transition: ease-in .2s;
+  }
+  
+  .Login-h3{
+    text-align: center;
+    color: #ba282b;
+    font-weight: bold;
+    transition: ease-in .2s;
+  }
+  
+  .Login-P{
+    color: #ba282b;
+    font-weight: bold;
+    text-align: center;
+    transition: ease-in .2s;
+  }
+
+  .Login-P a{
+    text-decoration: none;
+    color: White;
+  }
+  
+  .Login-text{
+     text-align: center;
+    color: #ba282b;
+    font-weight: bold;
+    transition: ease-in .2s;
+  }
+  
+  
+  .Login-Form {
+    width: 92%;
+    margin-left: 3%;
+    margin-right: 1%;
+    background-color: #161c25;
+    padding: 10px;
+    background: #424446;
+    box-shadow:  13px 13px 22px rgba(0,0,0,.3);
+                 align-items: center;
+                 justify-content: center;
+                 list-style: none;
+                 border-radius: 10px;
+                 transition: ease-in .2s;
+  }
+  
+  .Login-Input2 {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    transition: ease-in .2s;
+  }
+  
+  .Login-Input2  input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    transition: ease-in .2s;
+  }
+  
+  .Login-Input2  textarea {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    transition: ease-in .2s;
+  }
+  
+  .Login-Input2  label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    margin-top: 0.8em;
+    top: 0;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: white;
+    transition: ease-in .2s;
+  }
+  
+  .Login-Input2  :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background-color: #424446;
+    margin-top: 0%;
+    padding-top: 0%;
+  }
+  
+  .Login-Input2  :is(input:focus, input:valid) {
+    border-color: #ba282b;
+    filter: invert(0%);
+  }
+  .Login-Input2  :is(textarea:focus) {
+    border-color: #ba282b;
+    filter: invert(0%);
+  }
+  /*Button Code https://uiverse.io/Custyyyy/short-lizard-47*/
+  .Login-btn {
+    align-items: center;
+    appearance: none;
+    background-color: #161c25;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,rgba(45, 35, 66, 0.15) 0 7px 13px -3px,#ba282b 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    height: 48px;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .Login-btn:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #ba282b 0 -3px 0 inset;
+   }
+   
+   .Login-btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px, rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #ba282b 0 -3px 0 inset;
+    transform: translateY(-2px);
+   }
+   
+   .Login-btn:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+   }
+
+   .Google-Login-button {
+    max-width: 320px;
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: white;
+    background-color: #404245;
+    cursor: pointer;
+    transition: all .6s ease;
+    margin-top: 1%;
+    margin-left: 3%;
+  }
+  
+  .Google-Login-button svg {
+    height: 26px;
+  }
+  
+  .Google-Login-button:hover {
+    transform: scale(1.02);
+  }

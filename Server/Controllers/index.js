@@ -44,7 +44,12 @@ function DisplayCreateLegs(req, res, next)
   res.render('createLegs', {title: 'Create Leg Excercise', page: 'createLegs'});
 }
 
+function DisplayLogin(req, res,next){
+  res.render('login', {title: 'Login', page:'login'})
+}
+
 module.exports = {
+DisplayLogin: DisplayLogin,
  DisplayHome: DisplayHome,
  DisplayPush: DisplayPush,
  DisplayPull: DisplayPull,

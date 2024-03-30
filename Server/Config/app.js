@@ -8,7 +8,7 @@ const hbs = require('hbs');
 
 // additional dependencies
 const mongoose = require('mongoose');
-// const passport = require('passport');
+const passport = require('passport');
 const session = require('express-session');
 
 // Routing modules
@@ -47,6 +47,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+const GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
+passport.use(new GoogleStrategy({
+  clientID:     process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.GOOGLE_CALLBACK_URL,
+},
+async(request, accessToken, refreshToken, profile, done) =>{
+  try{
+      let user = await User.findOne({username:profile.displayName})
+      if(user){
+          done(null, user)
+      }
+      else{
+          user = await User.register(new User({ username: profile.displayName }), profile.id)
+          done(null, user)
+      }
+  } catch(err){
+      console.log(err)
+  }
+}
+));
+
 
 app.use('/', indexRouter);
 app.use('/exercises', exerciseRouter);

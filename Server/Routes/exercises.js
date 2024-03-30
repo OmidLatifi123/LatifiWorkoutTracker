@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 // global auth check middleware we built
-// let authCheck = require('../Config/authCheck');
 const exercisesController = require('../Controllers/exercises');
 
 /* GET: default route */
@@ -13,6 +12,7 @@ router.get('/', (req, res, next) => {
 /////////////////////////////////////////////////////////////////////////
 // PUSH
 /////////////////////////////////////////////////////////////////////////
+
 
 /* GET: /exercises/createPush => display blank form */
 router.get('/createPush', (req, res, next) => {
