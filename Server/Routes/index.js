@@ -45,7 +45,7 @@ router.get('exercises/pull', (req, res, next)=>
 });
 
 /* GET Legs Excercise Page */
-router.get('/legs', (req, res, next)=>
+router.get('/exercises/legs', (req, res, next)=>
 {
     IndexController.DisplayLegs(req, res, next);
 });

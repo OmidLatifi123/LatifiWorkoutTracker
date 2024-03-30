@@ -1,1 +1,133 @@
 /* Custom CSS Goes Here */
+html{
+    overflow-x: hidden;
+}
+
+.homeBanner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    padding-top: 1%;
+}
+
+
+.text-p{
+    color: #f1f1f1;
+}
+
+.homeH1{
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    color: #f1f1f1;
+}
+
+.homeH2{
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.homeH3{
+    font-family: "Kanit", sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+    color: #f1f1f1;
+}
+
+.bgVideo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.homeCards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2%;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.cardRow{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homeVideo{
+    filter: blur(7px) brightness(0.5);
+    width: 100%;
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.card {
+    width: 300px;
+    height: 380px;
+    border-radius: 20px;
+    background: #1e1e1e;
+    position: relative;
+    border: 4px solid #1e1e1e;
+    transition: 0.5s ease-in-out;
+    overflow: visible;
+    color: #f1f1f1;
+    margin-top: 10%;
+    margin-bottom: 10%;
+   }
+   
+   .card-details {
+    padding: 5%;
+   }
+   
+   .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #700000;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+
+   
+   /*Text*/
+   .text-title {
+    font-size: 3em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    border: 4px solid #700000;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+   .weightIcon{
+    filter: invert(1);
+   }
+
+   .homeAbout{
+    background-color: #700000;
+   }
+
+   .homeP{
+    color: #f1f1f1;
+   }
