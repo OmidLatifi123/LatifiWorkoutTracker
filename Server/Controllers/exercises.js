@@ -3,11 +3,20 @@ let Push = require('../Models/push');
 let Pull = require('../Models/pull');
 let Legs = require('../Models/legs');
 
+let index = async (req, res, next) => {
+   
+    let push = await Push.find();
+
+    res.render('exercises/push', { 
+        title: 'push exercises',
+        push: push
+    });
+};
+
 let push = async (req, res, next) => {
     // fetch all post docs 
     let push = await Push.find();
 
-    // console.log(post);
     res.render('exercises/push', { 
         title: 'Push Exercises',
         push: push
@@ -18,7 +27,6 @@ let pull = async (req, res, next) => {
     // fetch all post docs 
     let pull = await Pull.find();
 
-    // console.log(post);
     res.render('exercises/pull', { 
         title: 'Pull Exercises',
         pull: pull
@@ -29,7 +37,6 @@ let legs = async (req, res, next) => {
     // fetch all post docs 
     let legs = await Legs.find();
 
-    // console.log(post);
     res.render('exercises/legs', { 
         title: 'Legs Exercises',
         legs: legs
@@ -162,8 +169,10 @@ let updateLegs = async (req, res, next) => {
 
 // make public
 module.exports = {
+    index,
     push, pull, legs, 
     DisplayCreateLegs, DisplayCreatePull, DisplayCreatePush, 
+    displayEditPush, displayEditPull, displayEditLegs,
     createPush, createPull, createLegs,
     deletePush, deletePull, deleteLegs,
     deletePush, deletePull, deleteLegs,

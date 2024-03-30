@@ -9,7 +9,7 @@ const hbs = require('hbs');
 // additional dependencies
 const mongoose = require('mongoose');
 // const passport = require('passport');
-// const session = require('express-session');
+const session = require('express-session');
 
 // Routing modules
 const indexRouter = require('../Routes/index');

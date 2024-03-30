@@ -8,15 +8,10 @@ const User = require('../Models/user');
  * @param {Response} res
  * @param {NextFunction} next
  */
-function DisplayHome(req, res, next)
-{
-  /* No need to create a User, but demonstrating how to use the Model */
-  let user = new User();
-  user.username = 'admin';
-  console.log(`username: ${user.username}`);
 
-  /* Now Render the ejs page */
-  res.render('index', {title: 'Home', page: 'home'});
+async function DisplayHome(req, res, next) {
+
+  res.render('home', { title: 'Latifi Workout Tracker', page: 'home'});
 }
 
 function DisplayPush(req, res, next)
