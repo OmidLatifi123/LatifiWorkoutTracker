@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 // import the index controller
 const IndexController = require('../Controllers/index');
@@ -52,5 +53,22 @@ router.get('/createPush', (req, res, next)=>
 {
     IndexController.DisplayCreatePush(req, res, next);
 });
+
+router.get('/login', (req, res, next)=>{
+    IndexController.DisplayLogin(req,res,next);
+})
+
+router.post('/login', (req, res, next)=>{
+    IndexController.SubmitLogin(req, res,next);
+})
+
+router.get('/login/google',
+    passport.authenticate('google',{scope:
+    ['profile']}))
+
+router.get('/login/google/callback',
+    passport.authenticate('google',{failureRedirect: '/'}), (req, res, next)=>{
+        res.redirect('/')
+    })
 
 module.exports = router;
