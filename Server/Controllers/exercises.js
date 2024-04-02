@@ -7,41 +7,32 @@ let index = async (req, res, next) => {
    
     let push = await Push.find();
 
+    console.log(push);
+
     res.render('exercises/push', { 
         title: 'push exercises',
-        push: push
+        push: push,
+        user: req.user
     });
 };
 
-let push = async (req, res, next) => {
-    // fetch all post docs 
+// function DisplayPush(req, res, next)
+// {
+//   res.render('exercises/push', {title: 'Push Excercises', page: 'push'});
+// }
+
+let DisplayPush = async (req, res, next) =>
+{
     let push = await Push.find();
 
+    console.log(push);
+
     res.render('exercises/push', { 
-        title: 'Push Exercises',
-        push: push
+        title: 'push exercises',
+        push: push,
+        user: req.user
     });
-};
-
-let pull = async (req, res, next) => {
-    // fetch all post docs 
-    let pull = await Pull.find();
-
-    res.render('exercises/pull', { 
-        title: 'Pull Exercises',
-        pull: pull
-    });
-};
-
-let legs = async (req, res, next) => {
-    // fetch all post docs 
-    let legs = await Legs.find();
-
-    res.render('exercises/legs', { 
-        title: 'Legs Exercises',
-        legs: legs
-    });
-};
+}
 
 let DisplayCreatePush = async(req, res, next) => {
 
@@ -55,7 +46,7 @@ let createPush = async (req, res, next) => {
     await Push.create(req.body);
 
     // redirect
-    res.redirect('/push');
+    res.redirect('/exercises/push');
 };
 
 let deletePush = async (req, res, next) => {
@@ -63,13 +54,13 @@ let deletePush = async (req, res, next) => {
     await Push.findByIdAndDelete(req.params._id);
 
     // redirect
-    res.redirect('/push');
+    res.redirect('/exercises/push');
 };
 
 let displayEditPush = async (req, res, next) => {
     let push = await Push.findById(req.params._id);
 
-    res.render('exercises/push', { 
+    res.render('/exercises/push', { 
         title: 'Update Push',
         push: push,
     });
@@ -85,6 +76,24 @@ let updatePush = async (req, res, next) => {
 // PULL
 ////////////////////////////////////////////////////////////////////////
 
+
+// function DisplayPull(req, res, next)
+// {
+//   res.render('exercises/pull', {title: 'Pull Excercises', page: 'pull'});
+// }
+
+let DisplayPull = async (req, res, next) => {
+
+    let pull = await Pull.find();
+
+    res.render('exercises/pull', { 
+        title: 'pull exercises',
+        pull: pull,
+        user: req.user
+    });
+
+};
+
 let DisplayCreatePull = async(req, res, next) => {
 
 
@@ -97,7 +106,7 @@ let createPull = async (req, res, next) => {
     await Pull.create(req.body);
 
     // redirect
-    res.redirect('/pull');
+    res.redirect('/exercises/pull');
 };
 
 let deletePull = async (req, res, next) => {
@@ -105,13 +114,13 @@ let deletePull = async (req, res, next) => {
     await Pull.findByIdAndDelete(req.params._id);
 
     // redirect
-    res.redirect('/pull');
+    res.redirect('/exercises/pull');
 };
 
 let displayEditPull = async (req, res, next) => {
     let pull = await Pull.findById(req.params._id);
 
-    res.render('exercises/pull', { 
+    res.render('/exercises/editPull', { 
         title: 'Update Pull',
         pull: pull,
     });
@@ -120,13 +129,30 @@ let displayEditPull = async (req, res, next) => {
 let updatePull = async (req, res, next) => {
     await Pull.findByIdAndUpdate(req.params._id, req.body);
 
-    res.redirect('/pull');
+    res.redirect('/exercises/pull');
 };
 
 
 //////////////////////////////////////////////////////////////////////
 // LEGS
 //////////////////////////////////////////////////////////////////////
+
+// function DisplayLegs(req, res, next)
+// {
+//   res.render('exercises/legs', {title: 'Leg Excercises', page: 'legs'});
+// }
+
+let DisplayLegs = async (req, res, next) => {
+
+    let legs = await Legs.find();
+
+    res.render('exercises/legs', { 
+        title: 'pull exercises',
+        legs: legs,
+        user: req.user
+    });
+}
+
 
 let DisplayCreateLegs = async(req, res, next) => {
 
@@ -140,7 +166,7 @@ let createLegs = async (req, res, next) => {
     await Legs.create(req.body);
 
     // redirect
-    res.redirect('/push');
+    res.redirect('/exercises/legs');
 };
 
 let deleteLegs = async (req, res, next) => {
@@ -148,7 +174,7 @@ let deleteLegs = async (req, res, next) => {
     await Legs.findByIdAndDelete(req.params._id);
 
     // redirect
-    res.redirect('/Legs');
+    res.redirect('/legs');
 };
 
 let displayEditLegs = async (req, res, next) => {
@@ -169,8 +195,8 @@ let updateLegs = async (req, res, next) => {
 
 // make public
 module.exports = {
+    DisplayLegs, DisplayPull, DisplayPush,
     index,
-    push, pull, legs, 
     DisplayCreateLegs, DisplayCreatePull, DisplayCreatePush, 
     displayEditPush, displayEditPull, displayEditLegs,
     createPush, createPull, createLegs,

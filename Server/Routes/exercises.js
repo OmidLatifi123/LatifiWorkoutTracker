@@ -9,10 +9,17 @@ router.get('/', (req, res, next) => {
     exercisesController.index(req, res, next);
 });
 
+
+
 /////////////////////////////////////////////////////////////////////////
 // PUSH
 /////////////////////////////////////////////////////////////////////////
 
+/* GET Push Excercise Page */
+router.get('/push', (req, res, next)=>
+{
+    exercisesController.DisplayPush(req, res, next);
+});
 
 /* GET: /exercises/createPush => display blank form */
 router.get('/createPush', (req, res, next) => {
@@ -30,18 +37,24 @@ router.get('/delete/:_id', (req, res, next) => {
 });
 
 /* GET: /exercises/edit/abc123 => display blank form */
-router.get('/edit/:_id', (req, res, next) => {
+router.get('/editPush/:_id', (req, res, next) => {
     exercisesController.displayEditPush(req, res, next);
 });
 
 /* POST: /exercises/edit/abc123 => process form submission for updating */
-router.post('/edit/:_id', (req, res, next) => {
+router.post('/editPush/:_id', (req, res, next) => {
     exercisesController.updatePush(req, res, next);
 });
 
 /////////////////////////////////////////////////////////////////////////
 // PULL
 /////////////////////////////////////////////////////////////////////////
+
+/* GET Pull Excercise Page */
+router.get('/pull', (req, res, next)=>
+{
+    exercisesController.DisplayPull(req, res, next);
+});
 
 /* GET: /exercises/createPull => display blank form */
 router.get('/createPull', (req, res, next) => {
@@ -59,18 +72,24 @@ router.get('/delete/:_id', (req, res, next) => {
 });
 
 /* GET: /exercises/edit/abc123 => display blank form */
-router.get('/edit/:_id', (req, res, next) => {
+router.get('/editPull/:_id', (req, res, next) => {
     exercisesController.displayEditPull(req, res, next);
 });
 
 /* POST: /exercises/edit/abc123 => process form submission for updating */
-router.post('/edit/:_id', (req, res, next) => {
+router.post('/editPull/:_id', (req, res, next) => {
     exercisesController.updatePull(req, res, next);
 });
 
 /////////////////////////////////////////////////////////////////////////
 // LEGS
 /////////////////////////////////////////////////////////////////////////
+
+/* GET Legs Excercise Page */
+router.get('/legs', (req, res, next)=>
+{
+    exercisesController.DisplayLegs(req, res, next);
+});
 
 /* GET: /exercises/createLegs => display blank form */
 router.get('/createLegs', (req, res, next) => {
@@ -88,12 +107,12 @@ router.get('/delete/:_id', (req, res, next) => {
 });
 
 /* GET: /exercises/edit/abc123 => display blank form */
-router.get('/edit/:_id', (req, res, next) => {
+router.get('/editLegs/:_id', (req, res, next) => {
     exercisesController.displayEditLegs(req, res, next);
 });
 
 /* POST: /exercises/edit/abc123 => process form submission for updating */
-router.post('/edit/:_id', (req, res, next) => {
+router.post('/editLegs/:_id', (req, res, next) => {
     exercisesController.updateLegs(req, res, next);
 });
 

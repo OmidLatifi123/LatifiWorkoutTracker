@@ -32,40 +32,6 @@ router.get('/login/google/callback',
         res.redirect('/')
     })
 
-/* GET Push Excercise Page */
-router.get('/exercises/push', (req, res, next)=>
-{
-    IndexController.DisplayPush(req, res, next);
-});
 
-/* GET Pull Excercise Page */
-router.get('exercises/pull', (req, res, next)=>
-{
-    IndexController.DisplayPull(req, res, next);
-});
-
-/* GET Legs Excercise Page */
-router.get('/exercises/legs', (req, res, next)=>
-{
-    IndexController.DisplayLegs(req, res, next);
-});
-
-/* GET create Legs Excercise Page */
-router.get('/createLegs', (req, res, next)=>
-{
-    IndexController.DisplayCreateLegs(req, res, next);
-});
-
-/* GET create Pull Excercise Page */
-router.get('/createPull', (req, res, next)=>
-{
-    IndexController.DisplayCreatePull(req, res, next);
-});
-
-/* GET create push Excercise Page */
-router.get('/createPush', (req, res, next)=>
-{
-    IndexController.DisplayCreatePush(req, res, next);
-});
 
 module.exports = router;

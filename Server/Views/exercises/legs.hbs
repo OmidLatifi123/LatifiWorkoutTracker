@@ -1,4 +1,13 @@
 <h1> Legs Page </h1>
+<a href="/exercises/createLegs"> Create Legs</a>
 
-
-<a href="/exercises/createPush.hbs"> Create Push</a>
+<ul class="card-body center">
+    {{#each legs}}
+ <li class="card m-4 text-center col-lg-4">
+            <p>{{this.reps}}</p>       
+            <h6>{{this.title}}</h6>
+            <p>{{{this.description}}}</p>
+   
+    </li> 
+    {{/each}}
+</ul>
