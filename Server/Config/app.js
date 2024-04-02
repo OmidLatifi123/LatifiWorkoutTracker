@@ -15,6 +15,7 @@ const session = require('express-session');
 const indexRouter = require('../Routes/index');
 const exerciseRouter = require('../Routes/exercises');
 
+
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -33,6 +34,7 @@ app.set('view engine', 'hbs');
 // register hbs helpers
 hbs.registerPartials(path.join(__dirname, '../Views/components/'));
 hbs.registerPartials(path.join(__dirname, '../Views/exercises/'));
+
 
 hbs.registerHelper('loadPage', function (pageName) 
 {

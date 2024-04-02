@@ -1,21 +1,24 @@
-<h1> Push Page </h1>
+<h1 class="exH1">Push Page</h1>
+<div class="btnContainer">
+    <a href="/exercises/createPush"><button class="createbtn">Create Push</button></a>
+</div>
 
-<a href="/exercises/createPush"> Create Push</a>
-
-
-<ul class="card-body center">
-    {{#each push}}
- <li class="card m-4 text-center col-lg-4">
-            <p>{{this.reps}}</p>       
-            <h6>{{this.title}}</h6>
-            <p>{{{this.description}}}</p>
-   
-   <a href="/exercises/editPush/{{this._id}}" class="btn btn-primary">
-                Edit
-            </a>
-            <a href="/exercises/delete/{{this._id}}" class="btn btn-primary">
-                Delete
-            </a>
-    </li> 
-    {{/each}}
-</ul>
+<div class="container">
+    <div class=" card-rows row justify-content-center">
+        {{#each push}}
+        <div class="exCard m-2 text-center col-lg-2">
+            <div class="card-body">
+                <p class="exP">{{this.reps}}</p>       
+                <h6 class="exH6">{{this.title}}</h6>
+                <p class="exP">{{{this.description}}}</p>
+                <a href="/exercises/editPush/{{this._id}}" class="btn btn-primary">
+                    Edit
+                </a>
+                <a href="/exercises/delete/{{this._id}}" class="btn btn-primary">
+                    Delete
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
