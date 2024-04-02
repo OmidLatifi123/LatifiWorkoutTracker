@@ -9,12 +9,15 @@
             <h6>{{this.title}}</h6>
             <p>{{{this.description}}}</p>
    
+
+   <a href="/exercises/editPull/{{this._id}}" class="btn btn-primary">
+                Edit
+            </a>
+            <a href="/exercises/delete/{{this._id}}" class="btn btn-primary">
+                Delete
+            </a>
     </li> 
 
- <a href="/exercises/editPull/{{this._id}}" class="btn btn-primary">
-                ✎ Edit
-            </a>
 
-              <a class="btn btn-primary" href="/post/delete/{{this._id}}">Delete</a>
     {{/each}}
 </ul>

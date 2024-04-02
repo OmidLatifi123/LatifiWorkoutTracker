@@ -7,11 +7,9 @@ let index = async (req, res, next) => {
    
     let push = await Push.find();
 
-    console.log(push);
-
-    res.render('exercises/push', { 
-        title: 'push exercises',
-        push: push,
+    res.render('exercises/', { 
+        // title: 'push exercises',
+        // push: push,
         user: req.user
     });
 };
@@ -120,7 +118,7 @@ let deletePull = async (req, res, next) => {
 let displayEditPull = async (req, res, next) => {
     let pull = await Pull.findById(req.params._id);
 
-    res.render('/exercises/editPull', { 
+    res.render('exercises/editPull', { 
         title: 'Update Pull',
         pull: pull,
     });
@@ -180,7 +178,7 @@ let deleteLegs = async (req, res, next) => {
 let displayEditLegs = async (req, res, next) => {
     let legs = await Legs.findById(req.params._id);
 
-    res.render('exercises/legs', { 
+    res.render('exercises/editLegs', { 
         title: 'Update Legs',
         legs: legs,
     });
