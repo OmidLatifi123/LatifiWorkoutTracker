@@ -170,7 +170,7 @@ let deleteLegs = async (req, res, next) => {
     await Legs.findByIdAndDelete(req.params._id);
 
     // redirect
-    res.redirect('exercises/legs');
+    res.redirect('/exercises/legs');
 }; 
 
 let displayEditLegs = async (req, res, next) => {

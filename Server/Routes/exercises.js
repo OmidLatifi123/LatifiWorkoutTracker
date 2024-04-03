@@ -32,7 +32,7 @@ router.post('/createPush', (req, res, next) => {
 });
 
 /* GET: /exercises/delete/abc123 => delete selected post doc */
-router.get('/delete/:_id', (req, res, next) => {
+router.get('/deletePush/:_id', (req, res, next) => {
     exercisesController.deletePush(req, res, next);
 });
 
@@ -67,7 +67,7 @@ router.post('/createPull', (req, res, next) => {
 });
 
 /* GET: /exercises/delete/abc123 => delete selected post doc */
-router.get('/delete/:_id', (req, res, next) => {
+router.get('/deletePull/:_id', (req, res, next) => {
     exercisesController.deletePull(req, res, next);
 });
 
@@ -102,7 +102,7 @@ router.post('/createLegs', (req, res, next) => {
 });
 
 /* GET: /exercises/delete/abc123 => delete selected post doc */
-router.get('/delete/:_id', (req, res, next) => {
+router.get('/deleteLegs/:_id', (req, res, next) => {
     exercisesController.deleteLegs(req, res, next);
 });
 
