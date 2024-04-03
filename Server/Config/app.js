@@ -14,6 +14,8 @@ const session = require('express-session');
 // Routing modules
 const indexRouter = require('../Routes/index');
 const exerciseRouter = require('../Routes/exercises');
+const authRouter = require('../Routes/auth');
+
 
 
 const app = express();
@@ -50,6 +52,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+app.use(session({
+  secret: process.env.PASSPORT_SECRET,
+  resave: true,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+let User = require('../Models/user');
+
 const GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
 passport.use(new GoogleStrategy({
   clientID:     process.env.GOOGLE_CLIENT_ID,
@@ -72,9 +85,13 @@ async(request, accessToken, refreshToken, profile, done) =>{
 }
 ));
 
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.use('/', indexRouter);
 app.use('/exercises', exerciseRouter);
+app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

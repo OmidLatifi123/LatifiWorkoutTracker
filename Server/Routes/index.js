@@ -12,26 +12,18 @@ router.get('/', (req, res, next)=>
     IndexController.DisplayHome(req, res, next);
 });
 
+router.get('/about', (req, res, next)=>
+{
+    IndexController.DisplayAbout(req, res, next);
+});
 /* GET Home Page */
 router.get('/home', (req, res, next)=>
 {
     IndexController.DisplayHome(req, res, next);
 });
 
-/* GET Login Page */
-router.post('/login', (req, res, next)=>{
-    IndexController.SubmitLogin(req, res,next);
-})
+router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, next);});
 
-router.get('/login/google',
-    passport.authenticate('google',{scope:
-    ['profile']}))
-
-router.get('/login/google/callback',
-    passport.authenticate('google',{failureRedirect: '/'}), (req, res, next)=>{
-        res.redirect('/')
-    })
-
-
+router.get('/register', (req, res, next)=>{IndexController.DisplayRegister(req, res, next);});
 
 module.exports = router;
