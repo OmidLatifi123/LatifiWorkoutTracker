@@ -23,8 +23,6 @@ let DisplayPush = async (req, res, next) =>
 {
     let push = await Push.find();
 
-    console.log(push);
-
     res.render('exercises/push', { 
         title: 'push exercises',
         push: push,
@@ -58,7 +56,7 @@ let deletePush = async (req, res, next) => {
 let displayEditPush = async (req, res, next) => {
     let push = await Push.findById(req.params._id);
 
-    res.render('/exercises/push', { 
+    res.render('exercises/editPush', { 
         title: 'Update Push',
         push: push,
     });
@@ -67,7 +65,7 @@ let displayEditPush = async (req, res, next) => {
 let updatePush = async (req, res, next) => {
     await Push.findByIdAndUpdate(req.params._id, req.body);
 
-    res.redirect('/push');
+    res.redirect('/exercises/push');
 };
 
 /////////////////////////////////////////////////////////////////////////
@@ -145,7 +143,7 @@ let DisplayLegs = async (req, res, next) => {
     let legs = await Legs.find();
 
     res.render('exercises/legs', { 
-        title: 'pull exercises',
+        title: 'Leg exercises',
         legs: legs,
         user: req.user
     });
@@ -172,22 +170,22 @@ let deleteLegs = async (req, res, next) => {
     await Legs.findByIdAndDelete(req.params._id);
 
     // redirect
-    res.redirect('/legs');
-};
+    res.redirect('exercises/legs');
+}; 
 
 let displayEditLegs = async (req, res, next) => {
     let legs = await Legs.findById(req.params._id);
 
-    res.render('exercises/editLegs', { 
+    res.render('/exercises/editLegs', { 
         title: 'Update Legs',
-        legs: legs,
+        legs: legs
     });
 };
 
 let updateLegs = async (req, res, next) => {
     await Legs.findByIdAndUpdate(req.params._id, req.body);
 
-    res.redirect('/legs');
+    res.redirect('/exercises/legs');
 };
 
 
@@ -198,7 +196,6 @@ module.exports = {
     DisplayCreateLegs, DisplayCreatePull, DisplayCreatePush, 
     displayEditPush, displayEditPull, displayEditLegs,
     createPush, createPull, createLegs,
-    deletePush, deletePull, deleteLegs,
     deletePush, deletePull, deleteLegs,
     updatePush, updatePull, updateLegs
 };
