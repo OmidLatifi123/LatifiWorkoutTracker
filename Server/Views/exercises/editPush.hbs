@@ -1,10 +1,11 @@
- <h1 class="create-post">Edit PUSH</h1>
-          
-          <form method="post"> 
+<section class="create-section">
+ <h1 class="exH1">Edit Push</h1>
+          <div class="create-container">
+            <form class="form-container" method="post"> 
             <input ctype="text" id="title" placeholder="title" name="title" value="{{push.title}}" required>
             <textarea id="description" name="description" rows="6" value="{{push.description}}"></textarea>
-            <input ctype="number" id="reps" placeholder="reps" name="reps" value="{{push.reps}}" required>
-
-
-                    <button class="create-button" type="submit">Post</button>
-</form>
+            <input type="number" id="reps" placeholder="reps" name="reps" value="{{push.reps}}"  required>
+            <button class="create-button" type="submit">Create</button>
+            </form>
+          </div>
+</section>

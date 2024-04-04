@@ -7,7 +7,6 @@
     <h3 class="homeH3">Let's get to work...</h3>
     <h1 class="homeH1">LATIFI WORKOUT TRACKER</h1>
 </div>
-
 </section>
 <section>
     <div class="bgVideo">
@@ -15,61 +14,103 @@
     </div>
 </section>
 <section class="homeCards">
-    <h2 class="homeH2"> Start Tracking</h2>
+    {{#if user}} <!-- Check if the user is logged in -->
+        <h2 class="homeH2">Circuit of the Day</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Push</h3>
+                    {{#each push}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <p class="card-text">{{this.description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="col-md-4">
+                    <h3>Pull</h3>
+                    {{#each pull}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <p class="card-text">{{this.description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="col-md-4">
+                    <h3>Legs</h3>
+                    {{#each legs}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <p class="card-text">{{this.description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <h2 class="homeH2">Start Tracking</h2>
         <div class="cardRow">
-<div class="homeCard">
-    <div class="card">
-    <div class="card-details">
-        <p class="text-title">Push</p>
-        <img class="weightIcon" src="Assets\images\dumbbell.png">
-        <ul>
-            <li>Bench Press</li>
-            <li>Overhead Press</li>
-            <li>Tricep Dips</li>
-            <li>Push-Ups</li>
-            <li>Dumbbell Flyes</li>
-        </ul>
-    </div>
-        <a href="exercises/push"><button class="card-button">Track Now</button></a>
-    </div>
-</div>
-
-<div class="homeCard">
-    <div class="card">
-    <div class="card-details">
-        <p class="text-title">Pull</p>
-        <img class="weightIcon" src="Assets\images\dumbbell.png">
-        <ul>
-            <li>Pull-Ups</li>
-            <li>Bent-Over Rows</li>
-            <li>Deadlifts</li>
-            <li>Face Pulls</li>
-            <li>Hammer Curls</li>
-        </ul>
-    </div>
-        <a href="exercises/pull"><button class="card-button">Track Now</button></a>
-    </div>
-</div>
-
-<div class="homeCard">
-    <div class="homeCard">
-    <div class="card">
-    <div class="card-details">
-        <p class="text-title">Legs</p>
-        <img class="weightIcon" src="Assets\images\dumbbell.png">
-        <ul>
-            <li>Squats</li>
-            <li>Leg Press</li>
-            <li>Deadlifts</li>
-            <li>Lunges</li>
-            <li>Calf Raises</li>
-        </ul>
-    </div>
-        <a href="exercises/legs"><button class="card-button">Track Now</button></a>
-    </div>
-    </div>
-</div>
+            <!-- Push Card -->
+            <div class="homeCard">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Push</p>
+                        <img class="weightIcon" src="Assets/images/dumbbell.png">
+                        <ul>
+                            <li>Bench Press</li>
+                            <li>Overhead Press</li>
+                            <li>Tricep Dips</li>
+                            <li>Push-Ups</li>
+                            <li>Dumbbell Flyes</li>
+                        </ul>
+                    </div>
+                    <a href="exercises/push"><button class="card-button">Track Now</button></a>
+                </div>
+            </div>
+            <!-- Pull Card -->
+            <div class="homeCard">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Pull</p>
+                        <img class="weightIcon" src="Assets/images/dumbbell.png">
+                        <ul>
+                            <li>Pull-Ups</li>
+                            <li>Bent-Over Rows</li>
+                            <li>Deadlifts</li>
+                            <li>Face Pulls</li>
+                            <li>Hammer Curls</li>
+                        </ul>
+                    </div>
+                    <a href="exercises/pull"><button class="card-button">Track Now</button></a>
+                </div>
+            </div>
+            <!-- Legs Card -->
+            <div class="homeCard">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Legs</p>
+                        <img class="weightIcon" src="Assets/images/dumbbell.png">
+                        <ul>
+                            <li>Squats</li>
+                            <li>Leg Press</li>
+                            <li>Deadlifts</li>
+                            <li>Lunges</li>
+                            <li>Calf Raises</li>
+                        </ul>
+                    </div>
+                    <a href="exercises/legs"><button class="card-button">Track Now</button></a>
+                </div>
+            </div>
+        </div>
+    {{/if}}
 </section>
+
 </div>
 <svg class="spikes-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 1920 540" width="1920" height="540" version="1.1"><path d="M0 237L274 204L549 260L823 278L1097 195L1371 294L1646 279L1920 186L1920 541L1646 541L1371 541L1097 541L823 541L549 541L274 541L0 541Z" fill="#ff001e"/><path d="M0 280L274 320L549 360L823 270L1097 292L1371 301L1646 328L1920 378L1920 541L1646 541L1371 541L1097 541L823 541L549 541L274 541L0 541Z" fill="#cd0114"/><path d="M0 413L274 378L549 403L823 409L1097 432L1371 363L1646 420L1920 376L1920 541L1646 541L1371 541L1097 541L823 541L549 541L274 541L0 541Z" fill="#9d010c"/><path d="M0 487L274 494L549 471L823 425L1097 474L1371 449L1646 432L1920 455L1920 541L1646 541L1371 541L1097 541L823 541L549 541L274 541L0 541Z" fill="#700000"/></svg>
 <section class="homeAbout">

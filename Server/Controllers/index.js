@@ -1,5 +1,9 @@
 const User = require('../Models/user');
 
+let Push = require('../Models/push');
+let Pull = require('../Models/pull');
+let Legs = require('../Models/legs');
+
 /**
  * This function will display the home page
  *
@@ -10,8 +14,11 @@ const User = require('../Models/user');
  */
 
 async function DisplayHome(req, res, next) {
+  let push = await Push.aggregate([{ $sample: { size: 3 } }]);
+  let pull = await Pull.aggregate([{ $sample: { size: 3 } }]);
+  let legs = await Legs.aggregate([{ $sample: { size: 3 } }]);
 
-  res.render('home', { title: 'Latifi Workout Tracker', page: 'home', user: req.user});
+  res.render('home', { title: 'Latifi Workout Tracker', page: 'home', user: req.user, legs: legs, pull: pull, push: push});
 }
 
 function DisplayLogin(req, res, next){
