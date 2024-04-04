@@ -43,7 +43,7 @@ let submitLogin = (req, res, next) => {
     passport.authenticate('local', (err, user) => {
         console.log(err);
         if (err) {
-            return res.redirect('/login/invalid');
+            return res.redirect('/auth/login/invalid');
         }
         else {
             req.login(user, (err) => {
@@ -51,7 +51,7 @@ let submitLogin = (req, res, next) => {
                     return res.redirect('/home');
                 }
                 else {
-                    return res.redirect('/login/invalid');
+                    return res.redirect('/auth/login/invalid');
                 }             
             });
         }
