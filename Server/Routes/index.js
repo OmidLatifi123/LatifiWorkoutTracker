@@ -22,8 +22,8 @@ router.get('/home', (req, res, next)=>
     IndexController.DisplayHome(req, res, next);
 });
 
-router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, next);});
+// router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, next);});
 
-router.get('/register', (req, res, next)=>{IndexController.DisplayRegister(req, res, next);});
+// router.get('/register', (req, res, next)=>{IndexController.DisplayRegister(req, res, next);});
 
 module.exports = router;

@@ -1,7 +1,13 @@
 <h1 class="exH1">Legs Page</h1>
+{{#if user}}
 <div class="btnContainer">
     <a href="/exercises/createLegs"><button class="createbtn">Create Legs</button></a>
 </div>
+{{else}}
+<div class="btnContainer">
+    <a href="/auth/login"><button class="createbtn">Create Push</button></a>
+</div>
+{{/if}}
 
 <div class="container">
     <div class=" card-rows row justify-content-center">
@@ -11,12 +17,14 @@
                 <p class="exP">{{this.reps}}</p>       
                 <h6 class="exH6">{{this.title}}</h6>
                 <p class="exP">{{{this.description}}}</p>
+                {{#if ../user}}
                 <a href="/exercises/editLegs/{{this._id}}" class="btn btn-primary">
                     Edit
                 </a>
                 <a href="/exercises/deleteLegs/{{this._id}}" class="btn btn-primary">
                     Delete
-                </a>
+                </a>   
+                {{/if}}
             </div>
         </div>
         {{/each}}
