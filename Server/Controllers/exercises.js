@@ -33,7 +33,7 @@ let DisplayPush = async (req, res, next) =>
 let DisplayCreatePush = async(req, res, next) => {
 
 
-    res.render('exercises/createPush', { title: 'Add New Push Exercise' });
+    res.render('exercises/createPush', { title: 'Add New Push Exercise', user: req.user });
 
 };
 
@@ -59,6 +59,7 @@ let displayEditPush = async (req, res, next) => {
     res.render('exercises/editPush', { 
         title: 'Update Push',
         push: push,
+        user: req.user
     });
 };
 
@@ -93,7 +94,7 @@ let DisplayPull = async (req, res, next) => {
 let DisplayCreatePull = async(req, res, next) => {
 
 
-    res.render('exercises/createPull', { title: 'Add New Pull Exercise' });
+    res.render('exercises/createPull', { title: 'Add New Pull Exercise', user: req.user });
 
 };
 
@@ -119,6 +120,7 @@ let displayEditPull = async (req, res, next) => {
     res.render('exercises/editPull', { 
         title: 'Update Pull',
         pull: pull,
+         user: req.user
     });
 };
 
@@ -153,7 +155,7 @@ let DisplayLegs = async (req, res, next) => {
 let DisplayCreateLegs = async(req, res, next) => {
 
 
-    res.render('exercises/createLegs', { title: 'Add New Leg Excercise' });
+    res.render('exercises/createLegs', { title: 'Add New Leg Excercise', user: req.user });
 
 };
 
@@ -178,7 +180,8 @@ let displayEditLegs = async (req, res, next) => {
 
     res.render('/exercises/editLegs', { 
         title: 'Update Legs',
-        legs: legs
+        legs: legs, 
+        user: req.user
     });
 };
 

@@ -11,19 +11,19 @@ const User = require('../Models/user');
 
 async function DisplayHome(req, res, next) {
 
-  res.render('home', { title: 'Latifi Workout Tracker', page: 'home'});
+  res.render('home', { title: 'Latifi Workout Tracker', page: 'home', user: req.user});
 }
 
 function DisplayLogin(req, res, next){
-  res.render('login', {title: 'Login', page:'login'})
+  res.render('login', {title: 'Login', page:'login', user: req.user})
 }
 
 function DisplayRegister(req, res, next){
-  res.render('register', {title: 'Register', page:'register'})
+  res.render('register', {title: 'Register', page:'register', user: req.user})
 }
 
 function DisplayAbout(req, res,next){
-  res.render('about', {title: 'About', page:'about'})
+  res.render('about', {title: 'About', page:'about', user: req.user})
 }
 
 module.exports = {

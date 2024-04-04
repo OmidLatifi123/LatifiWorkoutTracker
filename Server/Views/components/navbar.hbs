@@ -14,9 +14,11 @@
         <li class="nav-item me-auto">
           <a class="nav-link nav-link1" aria-current="page" href="/about">About Us</a>
         </li>
-        <li class="nav-item me-auto">
-          <a class="nav-link nav-link1" aria-current="page" href="/auth/login">Login</a>
-        </li>
+
+
+
+
+       
         <li class="nav-item me-auto">
           <a class="nav-link nav-link2" aria-current="page" href="/exercises/push">Push</a>
         </li>
@@ -26,6 +28,18 @@
         <li class="nav-item me-auto">
           <a class="nav-link nav-link3" aria-current="page" href="/exercises/legs">Legs</a>
         </li>
+        {{#if user}}
+                            <li class="nav-item me-auto">
+                        <a class="nav-link nav-link1" aria-current="page" href="#"></i> {{user.username}}</a>
+                    </li>
+                     <li class="nav-item me-auto">
+                        <a class="nav-link nav-link1" aria-current="page" href="/auth/logout"><i class="fa-regular fa-id-badge"></i> Logout</a>
+                    </li>
+                {{else}}
+                   <li class="nav-item me-auto">
+          <a class="nav-link nav-link1" aria-current="page" href="/auth/login">Login</a>
+        </li>
+                {{/if}}  
         </ul>
         <ul class="navbar-nav mb-2 ms-auto mb-lg-0">
         </ul>
