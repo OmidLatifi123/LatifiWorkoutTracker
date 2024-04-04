@@ -62,7 +62,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 let User = require('../Models/user');
-
+passport.use(User.createStrategy());
 const GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
 passport.use(new GoogleStrategy({
   clientID:     process.env.GOOGLE_CLIENT_ID,
