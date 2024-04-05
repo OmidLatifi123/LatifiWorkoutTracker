@@ -8,10 +8,10 @@ Welcome to Latifi Workout Tracker, sign in, start adding workouts, then go to th
 ALL CSS IS OUR OWN EXCEPT FOR THE FOLLOWING:
 
 
-About Us Developer Cards: https://uiverse.io/alexruix/weak-lionfish-37
+About Us Developer Cards (Christian): https://uiverse.io/alexruix/weak-lionfish-37
 
-Workout cards: https://uiverse.io/alexruix/cowardly-ape-35
+Workout cards (Tristan): https://uiverse.io/alexruix/cowardly-ape-35
 
-Navbar and Footer: Made with Bootstrap
+Navbar and Footer (Tristan): Made with Bootstrap
 
 The bonus feature which was attempted is File Uploads
