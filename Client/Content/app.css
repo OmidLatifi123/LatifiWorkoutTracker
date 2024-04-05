@@ -182,7 +182,7 @@ input::-webkit-inner-spin-button {
    }
 
    .upside-down{
-    transform: scaleY(-1);
+    transform: scaleX(1.5) scaleY(-1);
    }
 
    /* EXERCISE CSS */
@@ -244,6 +244,11 @@ input::-webkit-inner-spin-button {
         font-family: "Kanit", sans-serif;
         font-weight: bold;
         font-size: 30px;
+        transition: ease-in-out .2s;
+    }
+
+    .createbtn:hover{
+      background-color: #900000; 
     }
 
     .btnContainer{
@@ -261,6 +266,15 @@ input::-webkit-inner-spin-button {
         gap: 20px;
     }
 
+    .exImg{
+      width: 10%;
+    }
+
+    .centerDiv{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
    /* NAVBAR CSS */
    nav{
