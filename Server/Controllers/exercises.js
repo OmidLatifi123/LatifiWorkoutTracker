@@ -178,7 +178,7 @@ let deleteLegs = async (req, res, next) => {
 let displayEditLegs = async (req, res, next) => {
     let legs = await Legs.findById(req.params._id);
 
-    res.render('/exercises/editLegs', { 
+    res.render('exercises/editLegs', { 
         title: 'Update Legs',
         legs: legs, 
         user: req.user

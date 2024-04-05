@@ -207,6 +207,12 @@ input::-webkit-inner-spin-button {
     .card-body{
         background-color: #333;
         height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
+      text-align: center;
     }
 
 
