@@ -15,10 +15,15 @@ let pushSchema = new mongoose.Schema ({
         type: String
     },
     reps: {
-        type: String
+        type: Number,
+        min: 1
     },
       username: {
         type: String
+    },
+    file: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'File' 
     }
 });
 

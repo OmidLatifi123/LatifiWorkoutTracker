@@ -6,6 +6,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 
+
+//File upload attempt
+
+// const GridFsStorage = require('mongoose-gridfs-storage');
+// const Grid = require('gridfs-stream');
+const Push = require('../Models/push');
+const File = require('../Models/file');
+
 // additional dependencies
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -88,6 +96,62 @@ async(request, accessToken, refreshToken, profile, done) =>{
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+// FILE UPLOADS ATTEMPT ///////////////////////////////////////////////////////
+//This middleware crashes the server, it has been commented out for this reason
+
+// // Initialize GridFS
+// let gfs;
+// conn.once('open', () => {
+//     gfs = Grid(conn.db, mongoose.mongo);
+//     gfs.collection('uploads');
+// });
+
+// // Create storage engine
+// const storage = new GridFsStorage({
+//     url: 'mongodb://localhost:27017/your_database',
+//     file: (req, file) => {
+//         return {
+//             filename: file.originalname,
+//             contentType: file.mimetype
+//         };
+//     }
+// });
+// const upload = multer({ storage });
+
+// // Handle file upload
+// app.post('/upload', upload.single('file'), async (req, res) => {
+//     try {
+//         const newFile = new File({
+//             filename: req.file.filename,
+//             contentType: req.file.contentType
+//         });
+//         const savedFile = await newFile.save();
+//         res.json(savedFile);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Server Error');
+//     }
+// });
+
+// // Handle push creation
+// app.post('/push', async (req, res) => {
+//     try {
+//         const { title, description, reps, username } = req.body;
+//         const push = new Push({
+//             title,
+//             description,
+//             reps,
+//             username,
+//             file: req.file ? req.file.id : null // If file uploaded, save its ID
+//         });
+//         const savedPush = await push.save();
+//         res.json(savedPush);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Server Error');
+//     }
+// });
 
 app.use('/', indexRouter);
 app.use('/exercises', exerciseRouter);

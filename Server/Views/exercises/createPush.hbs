@@ -1,11 +1,12 @@
 <section class="create-section">
- <h1 class="exH1">Create Push</h1>
-          <div class="create-container">
-            <form class="form-container" method="post"> 
-            <input ctype="text" id="title" placeholder="title" name="title" required>
+    <h1 class="exH1">Create Push</h1>
+    <div class="create-container">
+        <form class="form-container" method="post" enctype="multipart/form-data"> 
+            <input type="text" id="title" placeholder="title" name="title" required>
             <textarea id="description" name="description" rows="6"></textarea>
-            <input type="number" id="reps" placeholder="reps" name="reps" required>
+            <input type="number" id="reps" placeholder="reps" name="reps" min="1" required>
+            <input type="file" id="file" name="file" >
             <button class="create-button" type="submit">Create</button>
-            </form>
-          </div>
+        </form>
+    </div>
 </section>
